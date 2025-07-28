@@ -44,8 +44,9 @@ const Cart = ({ lightMode }) => {
           </div>
           <div className={`w-full ${lightMode ? "bg-black" : "bg-white"}`}>
             {(data.cartItems.length > 1 && (
-              <div className="w-full flex flex-col items-center overflow-y-scroll lg:h-[70vh]">
-                {data.cartItems.map((item) => (
+              <div className="w-full flex flex-col items-center overflow-y-scroll h-[45vh] lg:h-[70vh]">
+                <div className="w-full flex flex-col items-center h-max" >
+ {data.cartItems.map((item) => (
                   <div key={item.id} className="w-full flex justify-center">
                     {item.quantity > 0 && (
                       <div
@@ -91,10 +92,12 @@ const Cart = ({ lightMode }) => {
                     )}
                   </div>
                 ))}
-                {data.cartItems.length === 2 && (
+                </div>
+               
+                {data.cartItems.length  >1 && (
                   <button
                     type="submit"
-                    className=" bg-red-500 px-4 py-2 rounded-xl hover:scale-110 w-72 hover:bg-red-700 text-white transition-all duration-300 mt-5 mb-11 font-serif lg:fixed bottom-5 lg:left-[40%]"
+                    className=" bg-red-500 px-4 py-2 rounded-xl hover:scale-110 w-72 hover:bg-red-700 text-white transition-all duration-300 mt-5 mb-11 font-serif lg:fixed lg:bottom-5 lg:left-[40%]"
                     onClick={() => navigate("/checkout", { state: total })}
                   >
                     Checkout

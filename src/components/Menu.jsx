@@ -28,11 +28,6 @@ const Menu = () => {
       </div>
 
       <div className="flex my-3">
-        <img src={mode} alt="cart" className="w-7 h-7" />
-        <h1 className="ml-2">Mode</h1>
-      </div>
-
-      <div className="flex my-3">
         <img src={Morecategory} alt="cart" className="w-7 h-7" />
         <h1 className="ml-2" onClick={() => navigate("/category")}>
           Categories
